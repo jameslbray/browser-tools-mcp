@@ -13,6 +13,7 @@ Check out our project roadmap here: [Github Roadmap / Project Board](https://git
 ## Updates
 
 v1.2.0 is out! Here's a quick breakdown of the update:
+
 - You can now enable "Allow Auto-Paste into Cursor" within the DevTools panel. Screenshots will be automatically pasted into Cursor (just make sure to focus/click into the Agent input field in Cursor, otherwise it won't work!)
 - Integrated a suite of SEO, performance, accessibility, and best practice analysis tools via Lighthouse
 - Implemented a NextJS specific prompt used to improve SEO for a NextJS application
@@ -30,9 +31,10 @@ There are three components to run this MCP tool:
 2. Install the MCP server from this command within your IDE: `npx @agentdeskai/browser-tools-mcp@latest`
 3. Open a new terminal and run this command: `npx @agentdeskai/browser-tools-server@latest`
 
-* Different IDEs have different configs but this command is generally a good starting point; please reference your IDEs docs for the proper config setup
+- Different IDEs have different configs but this command is generally a good starting point; please reference your IDEs docs for the proper config setup
 
 IMPORTANT TIP - there are two servers you need to install. There's...
+
 - browser-tools-server (local nodejs server that's a middleware for gathering logs)
 and
 - browser-tools-mcp (MCP server that you install into your IDE that communicates w/ the extension + browser-tools-server)
@@ -43,7 +45,8 @@ and
 After those three steps, open up your chrome dev tools and then the BrowserToolsMCP panel.
 
 If you're still having issues try these steps:
-- Quit / close down your browser. Not just the window but all of Chrome itself. 
+
+- Quit / close down your browser. Not just the window but all of Chrome itself.
 - Restart the local node server (browser-tools-server)
 - Make sure you only have ONE instance of chrome dev tools panel open
 
@@ -51,7 +54,7 @@ After that, it should work but if it doesn't let me know and I can share some mo
 
 If you have any questions or issues, feel free to open an issue ticket! And if you have any ideas to make this better, feel free to reach out or open an issue ticket with an enhancement tag or reach out to me at [@tedx_ai on x](https://x.com/tedx_ai)
 
-## Full Update Notes:
+## Full Update Notes
 
 Coding agents like Cursor can run these audits against the current page seamlessly. By leveraging Puppeteer and the Lighthouse npm library, BrowserTools MCP can now:
 
@@ -90,12 +93,12 @@ Ensure you have:
 
 ### ▶️ **Running Audits**
 
-**Headless Browser Automation**:  
+**Headless Browser Automation**:
  Puppeteer automates a headless Chrome instance to load the page and collect audit data, ensuring accurate results even for SPAs or content loaded via JavaScript.
 
 The headless browser instance remains active for **60 seconds** after the last audit call to efficiently handle consecutive audit requests.
 
-**Structured Results**:  
+**Structured Results**:
  Each audit returns results in a structured JSON format, including overall scores and detailed issue lists. This makes it easy for MCP-compatible clients to interpret the findings and present actionable insights.
 
 The MCP server provides tools to run audits on the current page. Here are example queries you can use to trigger them:
@@ -237,3 +240,9 @@ Once installed and configured, the system allows any compatible MCP client to:
 - Works with any MCP-compatible client
 - Primarily designed for Cursor IDE integration
 - Supports other AI editors and MCP clients
+
+## Browser Compatibility
+
+BrowserTools MCP is designed to work with browsers based on the Chromium engine, such as Google Chrome, Microsoft Edge, Brave, and Chromium itself.
+
+**Arc Browser is not supported.** Due to architectural differences and extension API limitations, the Arc browser cannot be used with BrowserTools MCP. Please use a supported Chromium-based browser for full functionality.
